@@ -31,7 +31,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'line-bot-api'
 # 環境変数の使用
 gem 'dotenv-rails'
-
+# HTTPclient
+gem 'httpclient'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
