@@ -32,4 +32,8 @@ class LineBotController < ApplicationController
       config.channel_token = ENV['LINE_CHANNEL_TOKEN']
     }
   end
+
+  def search_and_create_message()
+    http_client = HTTPClient.new
+  end
 end
