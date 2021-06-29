@@ -35,13 +35,14 @@ class LineBotController < ApplicationController
 
   def search_and_create_message(keyword)
     http_client = HTTPClient.new
+    # 楽天トラベルキーワード検索APIのリクエストURL
     url = 'https://app.rakuten.co.jp/services/api/Travel/KeywordHotelSearch/20170426'
     query = {
-      'keyword' => keyword,
-      'applicationId' => ENV['RAKUTEN_APPID'],
-      'hits' => 5,
-      'responseType' => 'small',
-      'formatVersion' => 2
+      'keyword' => keyword, #検索キーワード
+      'applicationId' => ENV['RAKUTEN_APPID'], #アプリID
+      'hits' => 5, #取得件数
+      'responseType' => 'small', #取得する情報量の度合い
+      'formatVersion' => 2 #出力フォーマットのバージョン
     }
     response = http_client.get(url, query)
     response = JSON.parse(response.body)
